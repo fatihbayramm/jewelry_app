@@ -11,6 +11,9 @@ class Jewelry(models.Model):
 
     jewelry_kind = models.CharField(verbose_name="Takı Türü", max_length=20)
 
+    user = models.ForeignKey(User, verbose_name="Sahip",
+                             on_delete=models.PROTECT)
+
     class Meta:
         db_table = "Takılar"
 

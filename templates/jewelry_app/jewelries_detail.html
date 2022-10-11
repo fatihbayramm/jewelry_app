@@ -13,17 +13,19 @@
     <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
 
 </head>
-<table>
-    <tr>
-        <td>
-            <a href="{% url 'jewelry-detail' jewelries_detail.id %}">{{ jewelries_detail.name }},
-                {{jewelries_detail.price}}
-                {{jewelries_detail.jewelry_kind}}</a>
-        </td>
-    </tr>
-</table>
+
 
 <body>
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'jewelry-detail' jewelries_detail.id %}">{{ jewelries_detail.name }},
+                    {{jewelries_detail.price}}
+                    {{jewelries_detail.jewelry_kind}}</a>
+            </td>
+        </tr>
+    </table>
+
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="{% url 'jewelry-home-page' %}">Takı Dünyası</a>
