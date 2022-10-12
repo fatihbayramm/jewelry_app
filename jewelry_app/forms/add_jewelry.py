@@ -16,7 +16,7 @@ class AddJewelry(forms.Form):
             attrs={
                 "class": "special",
                 "size": "18",
-                "title": "Başlık",
+                "title": "Ad - Soyad",
                 "required": True
             }
         )
