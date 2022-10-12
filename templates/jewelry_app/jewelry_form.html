@@ -13,15 +13,9 @@
     <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
 
 </head>
-<table>
-    {% for jewelry in jewelries %}
-    <tr>
-        <td>
-            <a href="{% url 'jewelry-detail' jewelry.id %}">{{ jewelry.name }}</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+
+
+
 
 <body>
 
@@ -68,17 +62,29 @@
     </nav>
 
     <main role="main">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="container">
-            {% block content %}
-            Takı Dünyası
-            {% endblock %}
-        </div>
+        {% block top %}
 
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Takı Dünyası</h1>
+                <p>Merhaba {{ user }} ! Bu platform taktığın takıları veya sana gelen takıları görmek için yapılmıştır.
+                </p>
+            </div>
+        </div>
+        {% endblock%}
 
     </main>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_ul}}
+        <input type="submit" value="Takıyı Tak">
+    </form>
+
+
     <footer class="container">
-        <p>&copy; Company 2022</p>
+        <p>&copy; Takı Dünyası Company 2022</p>
     </footer>
 
     <script src="{% static 'js/jquery-slim.min.js'%}"></script>
